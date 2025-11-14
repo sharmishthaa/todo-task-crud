@@ -1,0 +1,81 @@
+:root{
+  --blue:#0b57a3;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --bg:#f6f7f9;
+  --danger:#e74c3c;
+  --inprogress:#f59e0b;
+  --pending:#2563eb;
+  --completed:#10b981;
+  --panel-width:420px;
+}
+
+*{box-sizing:border-box}
+body,html,#root{height:100%}
+body{
+  margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+  background:var(--bg); color:#132032;
+}
+
+/* Topbar */
+.topbar{background:var(--blue);color:#fff;padding:12px 18px;box-shadow:0 1px 0 rgba(0,0,0,0.08)}
+.topbar-inner{display:flex;align-items:center;gap:12px}
+.topbar .back, .topbar .back-placeholder{color:#fff;text-decoration:none;font-weight:700}
+.topbar .title{flex:1;font-weight:700;font-size:14px;text-align:center}
+.back-placeholder{width:24px}
+
+/* Page wrapper */
+.page{display:flex;justify-content:center;padding:20px}
+.panel{
+  background:var(--card);width:var(--panel-width);border-radius:6px;padding:16px;
+  box-shadow:0 8px 20px rgba(10,20,50,0.05);
+  min-height:560px;
+}
+
+/* search row */
+.search-row{margin-bottom:14px}
+.search{width:100%;padding:10px;border-radius:6px;border:1px solid #e8eef7;background:#fff}
+
+/* sections */
+.section{margin-top:8px}
+.section-title{font-size:13px;color:#2b3b4a;margin:8px 0 10px;padding:0}
+
+/* group */
+.group{display:flex;flex-direction:column;gap:8px}
+
+/* task card */
+.task-card{display:flex;gap:12px;padding:12px;border-radius:6px;border:1px solid #eef3fb;background:#fff;align-items:flex-start;animation: fadeIn .18s ease}
+.task-card[data-status="completed"]{opacity:0.85}
+.task-left{width:70px;display:flex;align-items:flex-start;justify-content:flex-start}
+.status-btn{background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 8px;border-radius:6px;cursor:pointer;font-weight:600}
+.task-body{flex:1}
+.task-top{display:flex;justify-content:space-between;align-items:center}
+.task-title{font-weight:700}
+.task-meta{font-size:12px;color:var(--muted)}
+.task-desc{font-size:13px;color:#374151;margin-top:8px}
+.task-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.muted{color:var(--muted);font-size:12px}
+.task-actions{display:flex;gap:8px}
+.icon{background:transparent;border:none;cursor:pointer;text-decoration:none;font-size:14px}
+.icon.danger{color:var(--danger)}
+
+/* empty hint */
+.empty{padding:12px;border-radius:6px;background:#fbfdff;border:1px dashed #e6eef9;color:var(--muted);text-align:center}
+
+/* form narrow */
+.panel.narrow{max-width:520px}
+.form-row{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+.form-row label{font-size:13px;color:var(--muted)}
+.form-row input, .form-row textarea, .form-row select{padding:10px;border-radius:6px;border:1px solid #e6eef4;background:#fff}
+.form-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:6px}
+.btn{padding:8px 14px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;cursor:pointer}
+.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn.ghost{background:#fff;border-color:#cbd5e1}
+
+/* floating add button */
+.fab{
+  position:fixed;right:28px;bottom:28px;width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:26px;box-shadow:0 8px 18px rgba(11,23,83,0.2);
+}
+
+/* animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
